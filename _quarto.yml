@@ -16,6 +16,8 @@ format:
     css: styles.css
     toc: true
     page-layout: full
-
+    codetools:
+      code-block-border-left: "#31BAE9"
+      code-block-bg: whitesmoke
 
 
