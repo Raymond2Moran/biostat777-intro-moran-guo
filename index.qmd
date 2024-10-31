@@ -6,6 +6,7 @@ format:
     html-math-method: katex
     codetools:
       code-block-border-left: "#31BAE9"
+      code-block-bg: whitesmoke
 image: IMG_E4773.jpg
 toc: false
 about: 
