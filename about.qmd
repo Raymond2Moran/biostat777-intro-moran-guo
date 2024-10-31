@@ -1,0 +1,42 @@
+---
+title: "About Me"
+format: html
+editor:
+    render-on-save: true
+---
+
+# Bio
+
+Hello everyone! I'm Moran Guo, a current ScM student studying biostatistics at [Johns Hopkins Bloomberg School of Public Health](https://www.jhsph.edu). I graduated from [University of Rochester](https://rochester.edu) with a B.S. in Biological Sciences: Computational Biology (Magna Cum Laude) and minors in Mathematics & Japanese. During my last two years of undergraduate study, I researched protein coevolution and protein folding, utilizing AlphaFold and Bayesian Graphical Models to investigate correlated mutations. Moving forward, I’m eager to explore all possibilities in the field of biostatistics, with a particular interest in causal inference and Bayesian methods.
+
+Outside of academics, I’m also a huge fan of rock climbing (especially bouldering) and working out. My home gym is [Movement Hampden](https://movementgyms.com/hampden/). I just recovered from a moderate ankle sprain. Besides that, I also enjoy pop Japanese culture, electronic music and watching tennis. In the near future, I might consider taking up squash or golf—or maybe both!
+
+# Pictures of Me (and my interests)
+
+<div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; text-align: center;">
+
+<div>
+  <img src="At_Japan.JPG" width="160px" alt="Picture 1">
+  <p><em>At Japan Osaka Castle</em></p>
+</div>
+
+<div>
+  <img src="Japan2.JPG" width="175px" alt="Picture 2">
+  <p><em>Exploring Japan</em></p>
+</div>
+
+<div>
+  <img src="Graduation.JPG" width="300px" alt="Picture 3">
+  <p><em>Graduation Day</em></p>
+</div>
+
+<div>
+  <img src="Climbing-1.jpg" width="180px" alt="Picture 4">
+  <p><em>Bouldering</em></p>
+</div>
+
+</div>
+
+:::{.column-page-inset}
+![I am also a Jellycat fan! Go Jellycat!](pumpkin_jellycats.JPG)
+:::

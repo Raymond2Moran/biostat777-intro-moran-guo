@@ -1,0 +1,47 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Moran Guo\"\n",
+        "title-align: center\n",
+        "format: html\n",
+        "image: IMG_E4773.jpg\n",
+        "toc: false\n",
+        "about: \n",
+        "  template: jolla\n",
+        "  image-shape: rectangle\n",
+        "  image-width: 17em\n",
+        "  links:\n",
+        "    - icon: linkedin\n",
+        "      text: LinkedIn\n",
+        "      href: https://www.linkedin.com/in/moran-guo-mguo1708/\n",
+        "    - icon: github\n",
+        "      text: GitHub\n",
+        "      href: https://github.com/Raymond2Moran\n",
+        "    - icon: envelope\n",
+        "      text: Email\n",
+        "      href: mailto:mguo31@jh.edu\n",
+        "---\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "Hi there! I'm Moran, you can also call me Raymond. As a graduate student, I'm passionate about all kinds of knowledge in the field of biostatistics, or broadly public health questions. I enjoy doing statistical analysis, solving statistical and/or mathematical problems. Outside of academics, I am an active climber, intermediate (but passionate) chef, and currently looking forward to participate in hiking. \n"
+      ],
+      "id": "6e7c1020"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "my-env",
+      "language": "python",
+      "display_name": "my-env",
+      "path": "/Users/raymond/Library/Jupyter/kernels/my-env"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

@@ -1,0 +1,33 @@
+---
+title: "Moran Guo"
+title-align: center
+format: 
+  html:
+    html-math-method: katex
+    codetools:
+      code-block-border-left: "#31BAE9"
+image: IMG_E4773.jpg
+toc: false
+about: 
+  template: jolla
+  image-shape: rectangle
+  image-width: 17em
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/moran-guo-mguo1708/
+    - icon: github
+      text: GitHub
+      href: https://github.com/Raymond2Moran
+    - icon: envelope
+      text: Email
+      href: mailto:guomoran203@gmail.com
+    - icon: instagram
+      text: Instagram
+      href: https://www.instagram.com/moran_guo_/
+editor:
+    render-on-save: true
+
+---
+
+Hi there! I'm Moran, you can also call me Raymond. As a graduate student, I'm passionate about all kinds of knowledge in the field of biostatistics, or broadly public health questions. I enjoy doing statistical analysis and solving statistical and/or mathematical problems; particularly, those theoretical methods attract me. Outside of academics, I am an active climber, intermediate (but passionate) chef, and currently looking forward to participate in hiking. I also love Japanese culture and I've obtained the [JLPT N3 certificate](https://www.jlpt.jp/e/about/levelsummary.html). Feel free to chat with me about [Riichi Majhong](https://en.wikipedia.org/wiki/Japanese_mahjong)! 

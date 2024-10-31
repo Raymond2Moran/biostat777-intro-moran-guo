@@ -1,0 +1,212 @@
+---
+title: "Example Analysis"
+
+format: 
+    html:
+        bibliography: citation.bib
+        codetools: true
+        code-block-border-left: "#31BAE9"
+        code-block-bg: whitesmoke
+editor:
+    render-on-save: true
+
+callout-appearance: simple
+date: last-modified
+---
+
+## Introduction
+For this part of the project, I will use R's `iris` dataset (built-in dataset in R) to perform a sample data anlysis. 
+
+:::{.column-page-inset}
+![A sample picture of the species *Iris virginica*. Photo Credit: 
+[Frank Mayfield](https://www.flickr.com/photos/33397993@N05)](iris_virginica.png)
+:::
+
+### Question
+
+Intuitively speaking, different flowers (or species) have different sizes of sepal and petal. For this analysis, I analyzed the distribution of sepal and petal dimensions across different iris species in the `iris` dataset. Specifically, I aim to answer: **Are there significant differences in petal and sepal dimensions among the species in the dataset?**
+
+### Intended Audience
+
+Biologists, botanists, and enthusiastic data science students. Since the `iris` dataset is idea for *k*-means clustering and Principle Component Analysis (PCA), it is also an option for practicing classification algorithms.
+
+### Data Source
+
+The Iris dataset is a famous dataset built and used by biologist **Ronald Fisher** [@iris_wikipedia]. He documented and used these data in his paper discussing Linear Discriminant Analysis [@fisher1936statistical]. It consists of 50 samples from the three species of *Iris*: *Iris setosa*, *Iris virginica*, and *Iris versicolor*.
+
+Link to the dataset: [UCI Dataset Archive](https://archive.ics.uci.edu/dataset/53/iris){.external target="_blank"}
+
+
+## Data Dictionary
+
+```{r data dictionary}
+#install.packages("datadictionary")
+library(datadictionary)
+library(knitr)
+
+kable(create_dictionary(iris), format = "simple", caption = "Data Dictionary of the Iris dataset")
+```
+
+::: {.callout-tip}
+I used `knitr::kable()` function to display tables with enhanced aesthetics in the website.
+:::
+
+## Data Wrangling
+
+We first create a new variable `Petal.Ratio`, which is cauculated by dividing the `Petal.Length` by corresponding `Petal.Width`.
+Then, we calculate the average value of the `Sepal.Length`, `Sepal.Width`, `Petal.Length`, and `Petal.Ratio` across the three species.
+```{r data wrangling}
+suppressPackageStartupMessages(library(dplyr))
+library(tidyr)
+library(ggplot2)
+library(knitr)
+
+iris_summary <- iris %>%
+  mutate(Petal.Ratio = Petal.Length / Petal.Width)
+
+iris_statistics <- iris_summary %>%
+  group_by(Species) %>%
+  summarize(
+    Mean_Sepal_Length = mean(Sepal.Length),
+    Mean_Sepal_Width = mean(Sepal.Width),
+    Mean_Petal_Length = mean(Petal.Length),
+    Mean_Petal_Width = mean(Petal.Width),
+    Mean_Petal_Ratio = mean(Petal.Ratio)
+  ) %>%
+  arrange(desc(Mean_Petal_Ratio))
+
+kable(iris_statistics)
+
+```
+
+## Data Visualization
+
+After generating the table, we use `ggplot2` package to plot some variables of interest and observe their distributions.
+
+```{r ggplot}
+library(patchwork)
+
+plot1 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point() +
+  labs(
+    title = "Sepal Dimensions across Species",
+    subtitle = "Sepal Length vs. Sepal Width",
+    x = "Sepal Length (cm)",
+    y = "Sepal Width (cm)",
+    caption = "Data source: Iris Dataset from base R"
+  ) +
+  theme_classic()
+
+plot2 <- ggplot(iris, aes(x = Petal.Length, y = Petal.Width, color = Species)) +
+  geom_point() +
+  labs(
+    title = "Petal Dimensions across Species",
+    subtitle = "Petal Length vs. Petal Width",
+    x = "Petal Length (cm)",
+    y = "Petal Width (cm)",
+    caption = "Data source: Iris Dataset from base R"
+  ) +
+  theme_classic()
+
+combined_plot <- plot1 + plot2 + 
+                 plot_layout(guides = "collect") & theme(legend.position = "bottom")
+
+combined_plot
+
+ggplot(iris_summary, aes(x = Species, y = Petal.Ratio, fill = Species)) +
+  geom_boxplot(alpha = 0.5, width = 0.2) +
+  geom_violin(alpha = 0.5) + 
+  labs(
+    title = "Distribution of Petal Ratio across the three species",
+    subtitle = "Boxplots with overlayed violin plots showing variation in petal ratios",
+    x = "Species",
+    y = "Petal Ratio (Length / Width)",
+    caption = "Data source: Iris Dataset from base R"
+  ) +
+  theme_classic() +
+  theme(legend.position = "bottom")
+
+ggplot(iris_summary, aes(x = Sepal.Length, y = Petal.Ratio, color = Species)) +
+  geom_point() +
+  facet_wrap(~ Species) +
+  labs(
+    title = "Faceted Scatter Plot of Petal Dimensions by Species",
+    subtitle = "Petal Length vs. Petal Width for each Species",
+    x = "Sepal Length (cm)",
+    y = "Petal Ratio (Petal Length / Petal Width)",
+    caption = "Data source: Iris Dataset from base R"
+  ) +
+  theme_classic() +
+  theme(legend.position = "bottom")
+```
+
+::: {.callout-note}
+I used `ggplot2::theme_classic()` as the main theme of all of my plots, which is consistent with the Minimalism design of my website.
+:::
+
+## Principal Component Analysis (PCA)
+
+Lastly, to perform dimension reduction and to let us better understand which set(s) of features contribute to the (principal) component and/or variation of the data points,  I performed Principal Component Analysis (PCA) using the Iris dataset.
+Note that PCA only works for numeric data, so that we need to extract the numerical features from the dataset (unless perform data encoding for categorical features).
+
+```{r PCA}
+iris_numeric <- iris[, 1:4]
+iris_pca <- prcomp(iris_numeric, center = TRUE, scale. = TRUE)
+summary(iris_pca)
+
+pca_scores <- as.data.frame(iris_pca$x)
+pca_scores$Species <- iris$Species
+
+ggplot(pca_scores, aes(x = PC1, y = PC2, color = Species)) +
+  geom_point(size = 2) +
+  labs(
+    title = "PCA of Iris Dataset",
+    x = "Principal Component 1",
+    y = "Principal Component 2"
+  ) +
+  theme_classic() +
+  theme(legend.position = "bottom")
+
+loadings_df <- as.data.frame(iris_pca$rotation)
+loadings_df$Variable <- rownames(loadings_df)
+
+ggplot(loadings_df, aes(x = PC1, y = PC2, label = Variable)) +
+  geom_point() +
+  geom_text(vjust = 0, hjust = 0.75) +
+  labs(
+    title = "PCA Loadings for Iris Dataset",
+    x = "PC1 Loadings",
+    y = "PC2 Loadings"
+  ) +
+  xlim(-0.4, 0.7) +
+  theme_classic() +
+  theme(legend.position = "bottom")
+```
+
+## Summary
+
+From the plots and the tables, we can conclude that:
+
+1. The three Iris species' petal and sepal characteristics are so different that is well-separable. 
+From the scatterplot, we can observe that *setosa* has shorter, wider sepals & tiny petals compared to the other two species.
+From the distribution we can deduce that *setosa* can be well-predicted, since the data points corresponds to this species 
+have a clear boundary separating them from the rest of the group.
+
+2. *Iris setosa* has a wide range of `Petal.Ratio`, whereas the rest of the two species exhibited dense and relative low `Petal.Ratio` statistics.
+Combined with the result of the first scatterplot, this suggest that both the widths and the lengths of the *Iris setosa* samples are more variable
+compared to the other two species.
+
+3. Based on the third figure, the `Sepal.Length` of *Iris versicolor* and *Iris virginica* are more variable although their `Petal.Ratio` are consistent compared to *Iris setosa*.
+So we can conclude that the petal dimensions of *Iris versicolor* and *Iris virginica* are relatively consistent, but their sepal size tend to vary.
+
+4. From the result of PCA, we can see that PC1 well-separated the *Iris setosa* from the rest of the two species. 
+*Iris virginica* and *Iris versicolor* had a decent separation by PC1 with some overlaps. This visualization (finding) is consistent with the PCs summary statistics, where around $73\%$ of the variation 
+is explained by PC1. What factor contributes to the PC1? Based on the last plot showing the PCA loadings, we can see that `Petal.Length` and `Petal.Width` features are the two features that strongly influenced PC1.
+Considering PC1 is so important, this finding suggest that information about petal dimensions informed us the most about the species of *Iris*.
+
+
+## Function Used
+
+`dplyr` package: `mutate()`, `group_by()`, `summarize()`, `arrange()`, `desc()`.
+
+`ggplot2` package: `geom_point()`, `geom_boxplot`, `geom_violin`, `facet_wrap()`.
