@@ -11,6 +11,18 @@ Hello everyone! I'm Moran Guo, a current ScM student studying biostatistics at [
 
 Outside of academics, I’m also a huge fan of rock climbing (especially bouldering) and working out. My home gym is [Movement Hampden](https://movementgyms.com/hampden/). I just recovered from a moderate ankle sprain. Besides that, I also enjoy pop Japanese culture, electronic music and watching tennis. In the near future, I might consider taking up squash or golf—or maybe both!
 
+# Education
+
+<div style="font-size: 90%;">
+
+| Degree | Institution                           | Major                          | Duration                | Location           |
+|--------|---------------------------------------|--------------------------------|-------------------------|--------------------|
+| ScM    | Johns Hopkins University <br> Bloomberg School of Public Health | Biostatistics            | Sep 2024 - May 2026* <br> *anticipated* | Baltimore, MD     |
+| B.S.   | University of Rochester               | Computational Biology <br> (Magna cum laude & Honors in Research) | Jan 2021 - May 2024 | Rochester, NY     |
+| Minor  | University of Rochester               | Mathematics & Japanese         | Jan 2021 - May 2024     | Rochester, NY     |
+
+</div>
+
 # Pictures of Me (and my interests)
 
 <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; text-align: center;">

@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Project 1"
+  title: "Moran Guo"
   navbar:
     left:
       - href: index.qmd
