@@ -10,6 +10,10 @@ website:
       - about.qmd
       - sample_analysis.qmd
 
+publish:
+  provider: "github"
+  branch: "main"
+
 format:
   html:
     theme: cosmo

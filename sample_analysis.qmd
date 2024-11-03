@@ -32,9 +32,9 @@ Biologists, botanists, and enthusiastic data science students. Since the `iris` 
 
 ### Data Source
 
-The Iris dataset is a famous dataset built and used by biologist **Ronald Fisher** [@iris_wikipedia]. He documented and used these data in his paper discussing Linear Discriminant Analysis [@fisher1936statistical]. It consists of 50 samples from the three species of *Iris*: *Iris setosa*, *Iris virginica*, and *Iris versicolor*.
+The Iris dataset [@iris_wikipedia] is a famous dataset built and used by biologist **Ronald Fisher** [@Fisher_wikipedia]. He documented and used these data in his paper discussing Linear Discriminant Analysis [@fisher1936statistical]. It consists of 50 samples from the three species of *Iris*: *Iris setosa*, *Iris virginica*, and *Iris versicolor*.
 
-Link to the dataset: [UCI Dataset Archive](https://archive.ics.uci.edu/dataset/53/iris){.external target="_blank"}
+Link to the dataset: [UCI Dataset Archive](https://archive.ics.uci.edu/dataset/53/iris){.external target="_blank"} [@iris_53]
 
 
 ## Data Dictionary
