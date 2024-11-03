@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-10-31">
+<meta name="dcterms.date" content="2024-11-03">
 
 <title>Example Analysis – Moran Guo</title>
 <style>
@@ -231,7 +231,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 31, 2024</p>
+      <p class="date">November 3, 2024</p>
     </div>
   </div>
   
@@ -264,8 +264,8 @@ window.Quarto = {
 </section>
 <section id="data-source" class="level3">
 <h3 class="anchored" data-anchor-id="data-source">Data Source</h3>
-<p>The Iris dataset is a famous dataset built and used by biologist <strong>Ronald Fisher</strong> <span class="citation" data-cites="iris_wikipedia">(<a href="#ref-iris_wikipedia" role="doc-biblioref">Wikipedia 2024</a>)</span>. He documented and used these data in his paper discussing Linear Discriminant Analysis <span class="citation" data-cites="fisher1936statistical">(<a href="#ref-fisher1936statistical" role="doc-biblioref">Fisher 1936</a>)</span>. It consists of 50 samples from the three species of <em>Iris</em>: <em>Iris setosa</em>, <em>Iris virginica</em>, and <em>Iris versicolor</em>.</p>
-<p>Link to the dataset: <a href="https://archive.ics.uci.edu/dataset/53/iris" class="external" target="_blank">UCI Dataset Archive</a></p>
+<p>The Iris dataset <span class="citation" data-cites="iris_wikipedia">(<a href="#ref-iris_wikipedia" role="doc-biblioref">Wikipedia 2024a</a>)</span> is a famous dataset built and used by biologist <strong>Ronald Fisher</strong> <span class="citation" data-cites="Fisher_wikipedia">(<a href="#ref-Fisher_wikipedia" role="doc-biblioref">Wikipedia 2024b</a>)</span>. He documented and used these data in his paper discussing Linear Discriminant Analysis <span class="citation" data-cites="fisher1936statistical">(<a href="#ref-fisher1936statistical" role="doc-biblioref">Ronald A. Fisher 1936</a>)</span>. It consists of 50 samples from the three species of <em>Iris</em>: <em>Iris setosa</em>, <em>Iris virginica</em>, and <em>Iris versicolor</em>.</p>
+<p>Link to the dataset: <a href="https://archive.ics.uci.edu/dataset/53/iris" class="external" target="_blank">UCI Dataset Archive</a> <span class="citation" data-cites="iris_53">(<a href="#ref-iris_53" role="doc-biblioref">R. A. Fisher 1936</a>)</span></p>
 </section>
 </section>
 <section id="data-dictionary" class="level2">
@@ -725,11 +725,17 @@ Cumulative Proportion  0.7296 0.9581 0.99482 1.00000</code></pre>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-iris_53" class="csl-entry" role="listitem">
+Fisher, R. A. 1936. <span>“<span>Iris</span>.”</span> UCI Machine Learning Repository.
+</div>
 <div id="ref-fisher1936statistical" class="csl-entry" role="listitem">
 Fisher, Ronald A. 1936. <em>The Use of Multiple Measurements in Taxonomic Problems</em>. Vol. 7. 2. Annals of Eugenics.
 </div>
 <div id="ref-iris_wikipedia" class="csl-entry" role="listitem">
-Wikipedia. 2024. <span>“Iris Flower Data Set — Wikipedia<span>,</span> the Free Encyclopedia.”</span> <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">https://en.wikipedia.org/wiki/Iris_flower_data_set</a>.
+Wikipedia. 2024a. <span>“Iris Flower Data Set — Wikipedia<span>,</span> the Free Encyclopedia.”</span> <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">https://en.wikipedia.org/wiki/Iris_flower_data_set</a>.
+</div>
+<div id="ref-Fisher_wikipedia" class="csl-entry" role="listitem">
+———. 2024b. <span>“Ronald Fisher — Wikipedia<span>,</span> the Free Encyclopedia.”</span> <a href="https://en.wikipedia.org/wiki/Ronald_Fisher">https://en.wikipedia.org/wiki/Ronald_Fisher</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -824,7 +830,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/Raymond2Moran\.github\.io\/biostat777-intro-moran-guo\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
