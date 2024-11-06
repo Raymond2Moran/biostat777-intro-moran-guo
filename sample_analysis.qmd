@@ -161,8 +161,9 @@ ggplot(pca_scores, aes(x = PC1, y = PC2, color = Species)) +
   geom_point(size = 2) +
   labs(
     title = "PCA of Iris Dataset",
+    subtitle = "Principal Component 1 vs Principal Component 2",
     x = "Principal Component 1",
-    y = "Principal Component 2"
+    y = "Principal Component 2",
   ) +
   theme_classic() +
   theme(legend.position = "bottom")
@@ -175,6 +176,7 @@ ggplot(loadings_df, aes(x = PC1, y = PC2, label = Variable)) +
   geom_text(vjust = 0, hjust = 0.75) +
   labs(
     title = "PCA Loadings for Iris Dataset",
+    subtitle = "PC Loadings indicate the contribution of each variable to the principal components",
     x = "PC1 Loadings",
     y = "PC2 Loadings"
   ) +
